@@ -20,14 +20,14 @@ function Cart({products,user}) {
       headers:{ Authorization:token}
 
     }
-    console.log(payload)
+   
     const response = await axios.delete(url,payload)
-    console.log(response)
+
     setCartProducts(response.data)
 
   }
   async function  handelCheckOutFunction(paymentData){
-    console.log('payemntis ',paymentData)
+    
     try{
       SetLoading(true)
       const url = `${baseUrl}/api/checkout`
@@ -57,8 +57,7 @@ function Cart({products,user}) {
 }
 Cart.getInitialProps =  async ctx =>{
 const {token} = parseCookies(ctx)
-console.log(parseCookies(ctx))
-console.log('car ui tokenn',token)
+
 if(!token){
   return {products:[]}
 }

@@ -8,7 +8,6 @@ function CartSummary({products,handelCheckOutFunction, success}) {
   const [stripeAmount,SetstripeAmount] = useState(0)
   const [isCartEmpty,SetCartEmpty] = useState(false)
   useEffect(()=>{
-    console.log('its in cart summary',products)
     const {cartTotal,stripeTotal}= calculateCartTotal(products)
     SetcartAmount(cartTotal)
     SetstripeAmount(stripeTotal)

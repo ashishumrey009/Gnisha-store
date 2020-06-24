@@ -9,7 +9,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 
 export default async(req,res)=>{
     const{paymentData} = req.body
-    console.log('payemnt_data_api',paymentData)
+    
     try{
         const {userId} = jwt.verify(req.headers.authorization,process.env.JWT_SECRET)
         const cart = await Cart.findOne({user:userId}).populate({

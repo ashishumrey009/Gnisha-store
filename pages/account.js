@@ -5,11 +5,10 @@ import {parseCookies} from 'nookies'
 import baseUrl from '../utils/baseUrl'
 import axios from 'axios'
 function Account({user,orders}) {
-  console.log(orders)
   return <>
   <AccountHeader {...user}/>
   <AccountOrders orders={orders}/>
-  { user.role==='root' && <AccountPermission  currentUserId={user._id}/>}
+  { user &&  user.role==='root' && <AccountPermission  currentUserId={user._id}/>}
   </>;
 }
 Account.getInitialProps =async ctx =>{

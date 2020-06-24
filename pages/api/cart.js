@@ -6,7 +6,7 @@ import connectDb from '../../utils/connectDb'
 connectDb()
 const  {ObjectId}   =mongoose.Types
 export default async(req,res)=>{
-    console.log('header is',res.headers)
+   
     switch(req.method){
     case "GET":
         await handleGetRequest(req,res);
@@ -22,7 +22,7 @@ export default async(req,res)=>{
     }
 }
 async function handleGetRequest(req,res){
-    console.log('in get cart api',req.headers)
+
     if(!("authorization" in req.headers)){
         return res.status(401).send('No authorization token')
     }
@@ -40,7 +40,7 @@ async function handleGetRequest(req,res){
     }
  }
  async function  handlePutRequest(req,res){
-    console.log('in put cart api',req.headers)
+    
     const{quantity ,productId} = req.body
     if(!("authorization" in req.headers)){
         return res.status(401).send('No authorization token')
@@ -69,7 +69,7 @@ async function handleGetRequest(req,res){
  }
  async function handleDeleteRequest(req,res){
      const {pid} = req.query
-     console.log('in del',pid)
+   
     if(!("authorization" in req.headers)){
         return res.status(401).send('No authorization token')
     }try{

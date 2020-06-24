@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "Project for MERN Stack - The Complete Guide",
   "private": true,
-
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build"
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "next build && next export"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -30,5 +33,8 @@
     "stripe": "^7.5.0",
     "uuid": "^3.3.2",
     "validator": "^11.1.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
