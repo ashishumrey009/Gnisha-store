@@ -1,2 +1,3 @@
-.vercelnode_modules
+.vercel
+node_modules
 npm-debug.log
