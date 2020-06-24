@@ -1,1 +1,1 @@
-# Gnisha-store
+# Ginisha-store
