@@ -10,7 +10,7 @@ function ProductSummary({name,mediaUrl, _id, price,sku,user}) {
           {name}
           </Item.Header>
           <Item.Description>
-            <p>${price}</p>
+            <p>₹{price}</p>
             <Label>SKU:{sku}</Label>
           </Item.Description>
           <Item.Extra>
